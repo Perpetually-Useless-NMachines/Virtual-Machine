@@ -1,0 +1,41 @@
+slime-massacre 0, 0, 100
+laugh-wildly 1, 0, 0
+a-dry-dog 10, 0, 1
+peppy 10
+hufflepuff
+
+First line:
+Registers:
+-------
+0
+...
+0
+-------
+Memory:
+-------
+100
+0
+...
+0
+-------
+Second line:
+Registers:
+-------
+0
+100
+...
+0
+-------
+Third line:
+Registers:
+-------
+0
+100
+...
+100
+...
+0
+-------
+
+Output:
+100
