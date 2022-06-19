@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace Parser {
-void writePUNInstructionsToMemory(string filename, int *memory);
+void writePUNInstructionsToMemory(string filename, uint32_t *memory);
 };
 
 #endif
