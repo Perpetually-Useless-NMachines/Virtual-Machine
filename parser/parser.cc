@@ -1,11 +1,12 @@
 #include "parser.h"
-#include "instructions/instructions.h"
+#include "../instructions/instructions.h"
 #include <iostream>
 #include <cstdlib>
 #include <string>
 #include <sys/wait.h>
 #include <fstream>
 #include <sstream>
+#include <wctype.h>
 using namespace std;
 
 // checks if a file exists and returns exit status, 0 means it does, 1 means it doesn't
@@ -32,10 +33,16 @@ void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
 
       char c;
       iss.get(c);
-      if (c == 'q' || c == '\n') continue;
+      if (c == 'q' || iswspace(c)) continue;
+
+      cout << memLocation << endl;
 
       Instructions instruction = parseInstruction(line);
-      instruction.transformToInteger();
+      memory[memLocation] = instruction.transformToInteger();
+      memLocation++;
+    }
+    for (int i = 0; i < 20; ++i) {
+        cout << memory[i] << endl;
     }
   }
 }
