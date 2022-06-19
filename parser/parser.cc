@@ -5,6 +5,7 @@
 #include <sys/wait.h>
 #include <fstream>
 #include <sstream>
+#include <fstream>
 using namespace std;
 
 // checks if a file exists and returns exit status, 0 means it does, 1 means it doesn't
@@ -24,6 +25,21 @@ void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
   cout << filename << endl;
   if (isOutputFileReadable(filename)) {
     cout << "readable" << endl;
+
+    ifstream infile(filename);
+
+    string line;
+    while (getline(infile, line)) {
+        istringstream iss(line);
+
+        char c;
+        iss.get(c);
+        if (c == 'q') continue;
+
+        cout << line << endl;
+
+    }
+
   }
 
   
