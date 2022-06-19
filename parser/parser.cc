@@ -1,11 +1,11 @@
 #include "parser.h"
+#include "instructions/instructions.h"
 #include <iostream>
 #include <cstdlib>
 #include <string>
 #include <sys/wait.h>
 #include <fstream>
 #include <sstream>
-#include <fstream>
 using namespace std;
 
 // checks if a file exists and returns exit status, 0 means it does, 1 means it doesn't
@@ -22,26 +22,20 @@ bool isOutputFileReadable(const string &outputFileName) {
 }
 
 void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
-  cout << filename << endl;
   if (isOutputFileReadable(filename)) {
-    cout << "readable" << endl;
-
     ifstream infile(filename);
+    int memLocation = 0;
 
     string line;
     while (getline(infile, line)) {
-        istringstream iss(line);
+      istringstream iss(line);
 
-        char c;
-        iss.get(c);
-        if (c == 'q') continue;
+      char c;
+      iss.get(c);
+      if (c == 'q' || c == '\n') continue;
 
-        cout << line << endl;
-
+      Instructions instruction = parseInstruction(line);
+      instruction.transformToInteger();
     }
-
   }
-
-  
-
 }

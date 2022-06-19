@@ -16,9 +16,11 @@ class Instructions {
   public:
     Instructions(int reg1, int reg2, int reg3);
     virtual void performInstruction();
+    virtual uint32_t transformToInteger();
 
 };
 
 Instructions parseInstruction(string s);
+Instructions parseIntegerToInstruction(uint32_t integer);
 
 #endif
