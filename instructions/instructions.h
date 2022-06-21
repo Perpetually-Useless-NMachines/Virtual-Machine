@@ -15,8 +15,8 @@ class Instructions {
 
   public:
     Instructions(int reg1, int reg2, int reg3);
-    // virtual void performInstruction();
-    uint32_t transformToInteger();
+    virtual void performInstruction();
+    virtual uint32_t transformToInteger();
 
 };
 

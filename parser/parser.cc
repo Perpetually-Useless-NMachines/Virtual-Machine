@@ -29,20 +29,18 @@ void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
 
     string line;
     while (getline(infile, line)) {
-      istringstream iss(line);
+      if (line.size() == 0) continue;
 
-      char c;
-      iss.get(c);
+      char c = line.at(0);
+
       if (c == 'q' || iswspace(c)) continue;
-
-      cout << memLocation << endl;
 
       Instructions instruction = parseInstruction(line);
       memory[memLocation] = instruction.transformToInteger();
       memLocation++;
     }
     for (int i = 0; i < 20; ++i) {
-        cout << memory[i] << endl;
+      cout << i << " " << memory[i] << endl;
     }
   }
 }
