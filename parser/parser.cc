@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <wctype.h>
+#include <memory>
 using namespace std;
 
 // checks if a file exists and returns exit status, 0 means it does, 1 means it doesn't
@@ -35,8 +36,8 @@ void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
 
       if (c == 'q' || iswspace(c)) continue;
 
-      Instructions instruction = parseInstruction(line);
-      memory[memLocation] = instruction.transformToInteger();
+      unique_ptr<Instructions> instruction = parseInstruction(line);
+      memory[memLocation] = instruction->transformToInteger();
       memLocation++;
     }
     for (int i = 0; i < 20; ++i) {
