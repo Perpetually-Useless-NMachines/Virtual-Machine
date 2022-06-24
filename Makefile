@@ -1,7 +1,9 @@
 CXX = g++
 CXXFLAGS = -std=c++14 -Wall -g -MMD
 EXEC = pun-vm
-OBJECTS = main.o
+OBJECTS = main.o parser/parser.o \
+					instructions/instructions.o \
+					instructions/store_memory/store_memory.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}

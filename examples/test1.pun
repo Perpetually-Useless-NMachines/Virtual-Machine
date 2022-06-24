@@ -4,38 +4,38 @@ a-dry-dog 10, 0, 1
 peppy 10
 hufflepuff
 
-First line:
-Registers:
--------
-0
-...
-0
--------
-Memory:
--------
-100
-0
-...
-0
--------
-Second line:
-Registers:
--------
-0
-100
-...
-0
--------
-Third line:
-Registers:
--------
-0
-100
-...
-100
-...
-0
--------
+qFirst line:
+qRegisters:
+q-------
+q0
+q...
+q0
+q-------
+qMemory:
+q-------
+q100
+q0
+q...
+q0
+q-------
+qSecond line:
+qRegisters:
+q-------
+q0
+q100
+q...
+q0
+q-------
+qThird line:
+qRegisters:
+q-------
+q0
+q100
+q...
+q100
+q...
+q0
+q-------
 
-Output:
-100
+qOutput:
+q100
