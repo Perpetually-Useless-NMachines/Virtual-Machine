@@ -12,11 +12,13 @@ using namespace std;
 string parseInstructionType(string s) {
   string abbrev;
   abbrev = s[0];
+  char prev = s[0];
   
   for(std::string::size_type i = 1; i < s.size(); ++i) { // assumes s can't end with '-' -> need a check?
-    if (s[i] == '-') {
-      abbrev += s[i + 1];
+    if (prev == '-') {
+      abbrev += s[i];
     }
+    prev = s[i];
   }
   return abbrev;
 }
@@ -25,7 +27,6 @@ string parseInstructionType(string s) {
 unique_ptr<Instructions> parseInstruction(string s) {
   // Step 1: separate the instruction type from the string s, and get it back. 
   // and then generate the rest:
-  // string rest = ...
   string instructionType; 
   bool instructionTypeComplete = false;
 

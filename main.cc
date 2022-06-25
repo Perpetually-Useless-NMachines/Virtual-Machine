@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 	Parser::writePUNInstructionsToMemory(argv[1], memory);
 
 	// for testing
-	parseInstruction("slime-massacre 0, 0, 100");
+	parseInstruction("slime-massacre-");
 
 	return 0;
 }
