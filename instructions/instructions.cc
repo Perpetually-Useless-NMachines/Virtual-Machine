@@ -1,6 +1,7 @@
 #include "instructions.h"
 #include "halting/halting.h"
 #include "store_memory/store_memory.h"
+#include <iostream>
 
 using namespace std;
 
@@ -8,11 +9,15 @@ using namespace std;
 // Given a string s, generate the new string where we take the first letter concatenated with
 // every other first letter after a dash. e.g.: "so-much" => "sm", "please-no" => "pn"
 string parseInstructionType(string s) {
-  return "";
+  string abbrev;
+  abbrev = s[0];
+  cout << abbrev << endl;
+  return "test";
 }
 
 // TODO: Let's parse this instruction together:
 unique_ptr<Instructions> parseInstruction(string s) {
+  parseInstructionType(s);
   // Step 1: separate the instruction type from the string s, and get it back.
   // string instructionType = ... 
   // and then generate the rest:

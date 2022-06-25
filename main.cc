@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include "parser/parser.h"
+// for testing
+#include "instructions/instructions.h"
 
 #define SIZE 2000000
 
@@ -13,7 +15,7 @@ int main(int argc, char *argv[]) {
 
 	if (argc != 2) {
 		cerr << "bad, command wrong" << endl;
-		throw 666;
+		throw "Please enter a valid command!";
 	}
 
 	// Step 1: Transform .pun to binary, and load the binary into memory
@@ -21,5 +23,9 @@ int main(int argc, char *argv[]) {
 		// Then, we decode it (into a specific instruction)
 		// Then we execute that instruction
 	Parser::writePUNInstructionsToMemory(argv[1], memory);
+
+	// for testing
+	parseInstruction("slime-massacre");
+
 	return 0;
 }
