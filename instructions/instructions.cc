@@ -6,10 +6,9 @@
 
 using namespace std;
 
-// TODO: Jenny please implement this function!
 // Given a string s, generate the new string where we take the first letter concatenated with
 // every other first letter after a dash. e.g.: "so-much" => "sm", "please-no" => "pn"
-string parseInstructionType(string s) {
+string parseInstructionType(const string &s) {
   string abbrev;
   abbrev = s[0];
   char prev = s[0];
@@ -23,8 +22,7 @@ string parseInstructionType(string s) {
   return abbrev;
 }
 
-// TODO: Let's parse this instruction together:
-unique_ptr<Instructions> parseInstruction(string s) {
+unique_ptr<Instructions> parseInstruction(const string &s) {
   // Step 1: separate the instruction type from the string s, and get it back. 
   // and then generate the rest:
   string instructionType; 
@@ -51,8 +49,13 @@ unique_ptr<Instructions> parseInstruction(string s) {
 
   // Step 2: Get the instruction type
   string parsedInstructionType = parseInstructionType(s);
-  cout << parsedInstructionType << endl;
   
   // Step 3: Make decisions on how to parse the rest based on parsedInstructionType
-  return make_unique<StoreMemory>(0, 0, 0);
+  if (parsedInstructionType == "sm") {
+    return make_unique<StoreMemory>(rest);
+  } else if (parsedInstructionType == "") {
+
+  } else {
+
+  }
 }
