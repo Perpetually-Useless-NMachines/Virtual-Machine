@@ -53,8 +53,9 @@ unique_ptr<Instructions> parseInstruction(const string &s) {
   // Step 3: Make decisions on how to parse the rest based on parsedInstructionType
   if (parsedInstructionType == "sm") {
     return make_unique<StoreMemory>(rest);
-  } else if (parsedInstructionType == "") {
-
+  } else if (parsedInstructionType == "lw") {
+  } else if (parsedInstructionType == "halt") {
+    return make_unique<Halting>();
   } else {
 
   }
