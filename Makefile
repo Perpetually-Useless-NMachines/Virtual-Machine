@@ -3,7 +3,8 @@ CXXFLAGS = -std=c++14 -Wall -g -MMD
 EXEC = pun-vm
 OBJECTS = main.o parser/parser.o \
 					instructions/instructions.o \
-					instructions/store_memory/store_memory.o
+					instructions/store_memory/store_memory.o \
+					utils/string_to_int.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}

@@ -2,7 +2,8 @@
 #include <string>
 #include "parser/parser.h"
 // for testing
-#include "instructions/instructions.h"
+// #include "instructions/instructions.h"
+#include "utils/string_to_int.h"
 
 #define SIZE 2000000
 
@@ -25,7 +26,8 @@ int main(int argc, char *argv[]) {
 	Parser::writePUNInstructionsToMemory(argv[1], memory);
 
 	// for testing
-	parseInstruction("slime-massacre-");
+	// parseInstruction("slime-massacre-");
+	to_int(3);
 
 	return 0;
 }
