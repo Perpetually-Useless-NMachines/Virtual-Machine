@@ -1,11 +1,15 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include "../instructions/instructions.h"
+
 #include <string>
+#include <vector>
+
 using namespace std;
 
 namespace Parser {
-void writePUNInstructionsToMemory(string filename, uint32_t *memory);
+void writePUNInstructionsToMemory(string filename, vector<unique_ptr<Instructions>> &memory);
 };
 
 #endif

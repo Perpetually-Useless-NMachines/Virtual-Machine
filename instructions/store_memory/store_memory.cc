@@ -18,3 +18,5 @@ StoreMemory::StoreMemory(const string &s) {
 void StoreMemory::performInstruction() {
   // actually perform instructions
 }
+
+string StoreMemory::toString() const {return "Store Memory";}
