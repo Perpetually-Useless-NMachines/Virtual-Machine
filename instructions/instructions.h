@@ -18,12 +18,8 @@ class Instructions {
 
   public:
     virtual void performInstruction() = 0;
-    virtual uint32_t transformToInteger() = 0;
     virtual ~Instructions() {};
     virtual string toString() const {return "Unspecified Instruction";}
 };
-
-unique_ptr<Instructions> parseInstruction(const string &s);
-unique_ptr<Instructions> parseIntegerToInstruction(uint32_t integer);
 
 #endif

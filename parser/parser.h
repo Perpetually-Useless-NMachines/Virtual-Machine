@@ -10,6 +10,7 @@ using namespace std;
 
 namespace Parser {
 void writePUNInstructionsToMemory(string filename, vector<unique_ptr<Instructions>> &memory);
+unique_ptr<Instructions> parseInstruction(const string &s);
 };
 
 #endif
