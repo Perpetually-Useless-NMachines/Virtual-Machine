@@ -21,7 +21,7 @@ class Instructions {
     virtual ~Instructions() {};
 };
 
-unique_ptr<Instructions> parseInstruction(string s);
+unique_ptr<Instructions> parseInstruction(const string &s);
 unique_ptr<Instructions> parseIntegerToInstruction(uint32_t integer);
 
 #endif
