@@ -3,6 +3,7 @@
 
 #include <string>
 #include <memory>
+#include <iostream>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ class Instructions {
     virtual void performInstruction() = 0;
     virtual uint32_t transformToInteger() = 0;
     virtual ~Instructions() {};
+    virtual string toString() const {return "Unspecified Instruction";}
 };
 
 unique_ptr<Instructions> parseInstruction(const string &s);

@@ -23,7 +23,7 @@ bool isOutputFileReadable(const string &outputFileName) {
   return true;
 }
 
-void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
+void Parser::writePUNInstructionsToMemory(string filename, vector<unique_ptr<Instructions>> &memory) {
   if (isOutputFileReadable(filename)) {
     ifstream infile(filename);
     int memLocation = 0;
@@ -36,12 +36,11 @@ void Parser::writePUNInstructionsToMemory(string filename, uint32_t *memory) {
 
       if (c == 'q' || iswspace(c)) continue;
 
-      unique_ptr<Instructions> instruction = parseInstruction(line);
-      memory[memLocation] = instruction->transformToInteger();
-      memLocation++;
+      memory.push_back(parseInstruction(line)); 
+      ++memLocation;
     }
     for (int i = 0; i < 20; ++i) {
-      cout << i << " " << memory[i] << endl;
+      cout << i << " " << (memory[i]->toString()) << endl;
     }
   }
 }

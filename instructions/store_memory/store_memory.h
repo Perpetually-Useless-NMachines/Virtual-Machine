@@ -10,6 +10,7 @@ class StoreMemory : public Instructions {
     void performInstruction() override;
     uint32_t transformToInteger() override {return 0x1100;};
     virtual ~StoreMemory() {};
+    string toString() const override;
 };
 
 #endif

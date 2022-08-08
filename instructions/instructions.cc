@@ -2,8 +2,6 @@
 #include "halting/halting.h"
 #include "store_memory/store_memory.h"
 
-#include <iostream>
-
 using namespace std;
 
 // Given a string s, generate the new string where we take the first letter concatenated with

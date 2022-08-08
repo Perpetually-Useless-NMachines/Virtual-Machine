@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "parser/parser.h"
+#include <vector>
 // for testing
 #include "instructions/instructions.h"
 
@@ -11,7 +12,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
 
 	// this represents our memory:
-	uint32_t memory [SIZE];
+	vector<unique_ptr<Instructions>> memory;
 
 	if (argc != 2) {
 		cerr << "bad, command wrong" << endl;
